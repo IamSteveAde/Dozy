@@ -146,7 +146,7 @@
         <div class="intro-content display-table">
           <div class="table-cell">
             <div class="typing-container">
-                <span id="typed-text" class="text">GLOBAL VISIONARY INVESTOR</span>
+                <span id="typed-texty" class="text">GLOBAL VISIONARY INVESTOR</span>
                 
             </div>
             <h1 class="men" style="margin: 0 auto; text-align: center; font-size: 18px; color: #c0c0c0; font-weight: 500;">
@@ -487,7 +487,10 @@
 <script>
     const words = ["Global Visionary Investor", "Tech Revolutionizer of Africa", "Africa's Leading Business Titan"];
     let wordIndex = 0;
-    const textElement = document.getElementById("typed-text");
+    const textElements = [
+        document.getElementById("typed-text"),
+        document.getElementById("typed-texty")
+    ];
 
     function showText() {
         textElement.style.opacity = "0"; // Start fade-out
@@ -503,6 +506,10 @@
 
     setTimeout(showText, 5000); // Start after first delay
 </script>
+
+
+
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/mains.js"></script>
