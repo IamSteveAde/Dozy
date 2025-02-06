@@ -485,28 +485,30 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    const words = ["Global Visionary Investor", "Tech Revolutionizer of Africa", "Africa's Leading Business Titan"];
-    let wordIndex = 0;
-    const textElements = [
-        document.getElementById("typed-text"),
-        document.getElementById("typed-texty")
-    ];
+    document.addEventListener("DOMContentLoaded", function () {
+        const words = ["Global Visionary Investor", "Tech Revolutionizer of Africa", "Africa's Leading Business Titan"];
+        let wordIndex = 0;
 
-    function showText() {
-        textElement.style.opacity = "0"; // Start fade-out
+        function showText(elementId) {
+            const textElement = document.getElementById(elementId);
+            if (!textElement) return; // Exit if element doesn't exist
 
-        setTimeout(() => {
-            wordIndex = (wordIndex + 1) % words.length; // Get next word
-            textElement.textContent = words[wordIndex]; // Change text
-            textElement.style.opacity = "1"; // Start fade-in
-        }, 2000); // Wait for fade-out before changing text
+            textElement.style.opacity = "0"; // Start fade-out
 
-        setTimeout(showText, 8000); // Repeat every 5 seconds
-    }
+            setTimeout(() => {
+                wordIndex = (wordIndex + 1) % words.length; // Get next word
+                textElement.textContent = words[wordIndex]; // Change text
+                textElement.style.opacity = "1"; // Start fade-in
+            }, 2000); // Wait for fade-out before changing text
 
-    setTimeout(showText, 5000); // Start after first delay
+            setTimeout(() => showText(elementId), 8000); // Repeat every 8 seconds
+        }
+
+        // Apply the animation to multiple elements
+        setTimeout(() => showText("typed-text"), 5000); // First element
+        setTimeout(() => showText("typed-texty"), 5000); // Second element
+    });
 </script>
-
 
 
 
