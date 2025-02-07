@@ -342,6 +342,23 @@
         </div>
     </div>
     Service End -->
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">MEET DOZY</div>
+        <h1 class="display-6 mb-5">Dive into some of Dozy's public Interviews.</h1>
+    </div>
+    <div class="slider-container">
+        
+        <div class="slider">
+            <div class="slide">
+                <iframe id="video1" src="https://www.youtube.com/embed/6UgU6DxoKok" allowfullscreen></iframe>
+            </div>
+            <div class="slide">
+                <iframe id="video2" src="https://youtube.com/embed/Imk9ZUcdJcY" allowfullscreen></iframe>
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
 
 
     <!-- Donate Start -->
@@ -508,6 +525,15 @@
         setTimeout(() => showText("typed-text"), 5000); // First element
         setTimeout(() => showText("typed-texty"), 5000); // Second element
     });
+</script>
+<script>
+    let index = 0;
+    function moveSlide(step) {
+        const slides = document.querySelector('.slider');
+        const totalSlides = document.querySelectorAll('.slide').length;
+        index = (index + step + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
 </script>
 
 
